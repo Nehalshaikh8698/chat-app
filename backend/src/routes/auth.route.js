@@ -1,18 +1,43 @@
-import express from "express"
-import { login, logout, signup,updateProfile} from "../controllers/auth.controller.js"
-import { protectRoute } from "../middleware/auth.middleware.js"
-import { checkAuth } from "../controllers/auth.controller.js"
+import express from "express";
 
-const router = express.Router()
+// Authentication Controllers
+import {
+  signup,
+  login,
+  logout,
+  checkAuth,
+  updateProfilePic,
+} from "../controllers/auth.controller.js";
 
-router.post("/signup",signup)
+// JWT Authentication Middleware
+import { protectRoute } from "../middleware/auth.middleware.js";
 
-router.post("/login",login)
+// Create Express Router
+const router = express.Router();
 
-router.post("/logout",logout)
+////////////////////////////////////////////////////////////////////////////////
+// Public Routes
+// These routes do NOT require authentication.
+////////////////////////////////////////////////////////////////////////////////
 
-router.put("/update-profile", protectRoute, updateProfile)
+// Create a new account
+router.post("/signup", signup);
 
-router.get("/check",protectRoute,checkAuth)
+// Login existing user
+router.post("/login", login);
+
+////////////////////////////////////////////////////////////////////////////////
+// Protected Routes
+// User must be authenticated (JWT Cookie required).
+////////////////////////////////////////////////////////////////////////////////
+
+// Logout current user
+router.post("/logout", protectRoute, logout);
+
+// Verify logged-in user and return profile
+router.get("/check", protectRoute, checkAuth);
+
+// Update profile picture
+router.put("/profile-picture", protectRoute, updateProfilePic);
 
 export default router;

@@ -2,6 +2,3 @@
 @plugin "daisyui";
 
 /* enable daisyUI + ALL themes */
-@plugin "daisyui" {
-  themes: all;
-}

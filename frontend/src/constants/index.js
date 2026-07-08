@@ -1,34 +1,63 @@
+////////////////////////////////////////////////////////////////////////////////
+// Application Themes (DaisyUI)
+////////////////////////////////////////////////////////////////////////////////
+
 export const THEMES = [
-     "light",
-      "dark",
-      "cupcake",
-      "bumblebee",
-      "emerald",
-      "corporate",
-      "synthwave",
-      "retro",
-      "cyberpunk",
-      "valentine",
-      "halloween",
-      "garden",
-      "forest",
-      "aqua",
-      "lofi",
-      "pastel",
-      "fantasy",
-      "wireframe",
-      "black",
-      "luxury",
-      "dracula",
-      "cmyk",
-      "autumn",
-      "business",
-      "acid",
-      "lemonade",
-      "night",
-      "coffee",
-      "winter",
-      "dim",
-      "nord",
-      "sunset",
-]
+  // Light Themes
+  "light",
+  "cupcake",
+  "bumblebee",
+  "emerald",
+  "corporate",
+  "garden",
+  "pastel",
+  "fantasy",
+  "winter",
+  "lemonade",
+
+  // Dark Themes
+  "dark",
+  "synthwave",
+  "retro",
+  "cyberpunk",
+  "halloween",
+  "forest",
+  "aqua",
+  "black",
+  "luxury",
+  "dracula",
+  "business",
+  "night",
+  "coffee",
+  "dim",
+  "nord",
+  "sunset",
+
+  // Experimental Themes
+  "valentine",
+  "wireframe",
+  "cmyk",
+  "autumn",
+  "acid",
+  "lofi",
+];
+
+////////////////////////////////////////////////////////////////////////////////
+// Default Theme
+////////////////////////////////////////////////////////////////////////////////
+
+export const DEFAULT_THEME = "coffee";
+
+////////////////////////////////////////////////////////////////////////////////
+// Local Storage Keys
+////////////////////////////////////////////////////////////////////////////////
+
+export const STORAGE_KEYS = {
+  THEME: "chat-theme",
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Application Name
+////////////////////////////////////////////////////////////////////////////////
+
+export const APP_NAME = "Chatty";
